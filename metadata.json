@@ -1,0 +1,6 @@
+{
+  "name": "DataLens AI - Multimodal Executive Analysis",
+  "description": "Transforma archivos, facturas, imágenes y textos de investigación en análisis estadísticos claros, gráficos interactivos e resúmenes ejecutivos.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
