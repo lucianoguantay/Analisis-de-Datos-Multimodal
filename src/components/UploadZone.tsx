@@ -99,17 +99,17 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
   };
 
   return (
-    <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm text-slate-900">
+    <div className="bg-zinc-950 border border-purple-900/50 text-zinc-100 rounded-2xl p-6 shadow-sm">
       {/* Tab Switcher */}
-      <div className="flex items-center justify-between pb-4 border-b border-slate-200">
-        <div className="flex items-center space-x-2 bg-slate-100 p-1 rounded-xl border border-slate-200">
+      <div className="flex items-center justify-between pb-4 border-b border-purple-900/50">
+        <div className="flex items-center space-x-2 bg-zinc-900 p-1 rounded-xl border border-purple-800/50">
           <button
             type="button"
             onClick={() => setActiveTab('file')}
             className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
               activeTab === 'file'
-                ? 'bg-indigo-600 text-white shadow-sm'
-                : 'text-slate-600 hover:text-slate-900'
+                ? 'bg-fuchsia-600 text-white shadow-sm'
+                : 'text-zinc-400 hover:text-fuchsia-300'
             }`}
           >
             <Upload className="w-4 h-4" />
@@ -120,8 +120,8 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
             onClick={() => setActiveTab('text')}
             className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
               activeTab === 'text'
-                ? 'bg-indigo-600 text-white shadow-sm'
-                : 'text-slate-600 hover:text-slate-900'
+                ? 'bg-fuchsia-600 text-white shadow-sm'
+                : 'text-zinc-400 hover:text-fuchsia-300'
             }`}
           >
             <FileText className="w-4 h-4" />
@@ -133,9 +133,9 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
         <button
           type="button"
           onClick={onOpenCamera}
-          className="flex items-center space-x-2 px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 rounded-xl text-xs font-semibold transition-colors"
+          className="flex items-center space-x-2 px-3.5 py-2 bg-zinc-900 hover:bg-purple-900/50 text-zinc-300 border border-purple-800/50 rounded-xl text-xs font-semibold transition-colors"
         >
-          <Camera className="w-4 h-4 text-indigo-600" />
+          <Camera className="w-4 h-4 text-fuchsia-500" />
           <span className="hidden sm:inline">Foto de Factura</span>
         </button>
       </div>
@@ -147,7 +147,7 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
               <div
                 onDragOver={(e) => e.preventDefault()}
                 onDrop={handleDrop}
-                className="border-2 border-dashed border-slate-300 hover:border-indigo-500 rounded-2xl p-8 text-center bg-slate-50 transition-all group cursor-pointer"
+                className="border-2 border-dashed border-purple-800/50 hover:border-fuchsia-500 rounded-2xl p-8 text-center bg-black transition-all group cursor-pointer"
               >
                 <input
                   type="file"
@@ -157,40 +157,40 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
                   className="hidden"
                 />
                 <label htmlFor="file-upload-input" className="cursor-pointer block">
-                  <div className="w-16 h-16 rounded-2xl bg-white group-hover:bg-indigo-50 text-indigo-600 flex items-center justify-center mx-auto mb-3 transition-colors border border-slate-200 group-hover:border-indigo-400 shadow-sm">
+                  <div className="w-16 h-16 rounded-2xl bg-zinc-900 group-hover:bg-purple-900/40 text-fuchsia-500 flex items-center justify-center mx-auto mb-3 transition-colors border border-purple-800/50 group-hover:border-fuchsia-500 shadow-sm">
                     <Image className="w-8 h-8" />
                   </div>
-                  <h4 className="font-bold text-sm text-slate-800 mb-1">
+                  <h4 className="font-bold text-sm text-zinc-100 mb-1">
                     Arrastra tu archivo aquí o haz clic para explorar
                   </h4>
-                  <p className="text-xs text-slate-500 max-w-sm mx-auto mb-3">
+                  <p className="text-xs text-zinc-400 max-w-sm mx-auto mb-3">
                     Fotos de facturas (JPG, PNG), documentos de investigación, reportes en PDF/TXT o tablas de datos CSV.
                   </p>
-                  <span className="inline-block px-4 py-2 bg-slate-900 text-white text-xs font-semibold rounded-lg group-hover:bg-indigo-600 transition-all">
+                  <span className="inline-block px-4 py-2 bg-zinc-800 text-white text-xs font-semibold rounded-lg group-hover:bg-fuchsia-600 transition-all">
                     Seleccionar Archivo
                   </span>
                 </label>
               </div>
             ) : (
-              <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex items-center justify-between">
+              <div className="bg-black p-4 rounded-2xl border border-purple-800/50 flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   {selectedFile.previewUrl ? (
                     <img
                       src={selectedFile.previewUrl}
                       alt="Preview"
-                      className="w-14 h-14 object-cover rounded-xl border border-slate-200 shadow-sm"
+                      className="w-14 h-14 object-cover rounded-xl border border-purple-800/50 shadow-sm"
                     />
                   ) : (
-                    <div className="w-14 h-14 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600">
+                    <div className="w-14 h-14 rounded-xl bg-purple-900/40 border border-purple-700/50 flex items-center justify-center text-fuchsia-500">
                       <FileCheck className="w-7 h-7" />
                     </div>
                   )}
                   <div>
-                    <h5 className="text-xs font-bold text-slate-900 max-w-xs truncate">
+                    <h5 className="text-xs font-bold text-zinc-100 max-w-xs truncate">
                       {selectedFile.name}
                     </h5>
-                    <p className="text-[11px] text-slate-500">{selectedFile.size} • {selectedFile.type || 'Documento'}</p>
-                    <span className="inline-block mt-1 text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded border border-emerald-200 font-mono font-medium">
+                    <p className="text-[11px] text-zinc-400">{selectedFile.size} • {selectedFile.type || 'Documento'}</p>
+                    <span className="inline-block mt-1 text-[10px] bg-emerald-900/40 text-emerald-400 px-2 py-0.5 rounded border border-emerald-700/50 font-mono font-medium">
                       Listo para análisis
                     </span>
                   </div>
@@ -198,7 +198,7 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
                 <button
                   type="button"
                   onClick={() => setSelectedFile(null)}
-                  className="p-2 text-slate-400 hover:text-slate-700 rounded-lg hover:bg-slate-200 transition-colors"
+                  className="p-2 text-zinc-500 hover:text-fuchsia-400 rounded-lg hover:bg-zinc-800 transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -212,23 +212,23 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
               value={pastedText}
               onChange={(e) => setPastedText(e.target.value)}
               placeholder="Pega aquí el texto de una factura, resumen de investigación universitaria, reporte de ingresos o datos brutos..."
-              className="w-full bg-slate-50 border border-slate-200 focus:border-indigo-500 rounded-2xl p-4 text-xs text-slate-900 placeholder-slate-400 focus:outline-none transition-colors"
+              className="w-full bg-black border border-purple-800/50 focus:border-fuchsia-500 rounded-2xl p-4 text-xs text-zinc-100 placeholder-zinc-600 focus:outline-none transition-colors"
             />
           </div>
         )}
 
         {/* Audience Selector Radio Group inside Upload */}
-        <div className="pt-3 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200">
+        <div className="pt-3 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-purple-900/50">
           <div className="flex items-center space-x-3 w-full sm:w-auto">
-            <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Audiencia:</span>
-            <div className="grid grid-cols-3 gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 text-[11px] font-semibold w-full sm:w-auto">
+            <span className="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Audiencia:</span>
+            <div className="grid grid-cols-3 gap-1 bg-zinc-900 p-1 rounded-xl border border-purple-800/50 text-[11px] font-semibold w-full sm:w-auto">
               <button
                 type="button"
                 onClick={() => onAudienceModeChange('executive')}
                 className={`px-3 py-1 rounded-lg transition-all text-center ${
                   audienceMode === 'executive'
-                    ? 'bg-indigo-600 text-white shadow-sm'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'bg-fuchsia-600 text-white shadow-sm'
+                    : 'text-zinc-400 hover:text-fuchsia-300'
                 }`}
               >
                 Ejecutivo
@@ -238,8 +238,8 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
                 onClick={() => onAudienceModeChange('general_public')}
                 className={`px-3 py-1 rounded-lg transition-all text-center ${
                   audienceMode === 'general_public'
-                    ? 'bg-indigo-600 text-white shadow-sm'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'bg-fuchsia-600 text-white shadow-sm'
+                    : 'text-zinc-400 hover:text-fuchsia-300'
                 }`}
               >
                 Público
@@ -249,8 +249,8 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
                 onClick={() => onAudienceModeChange('technical')}
                 className={`px-3 py-1 rounded-lg transition-all text-center ${
                   audienceMode === 'technical'
-                    ? 'bg-indigo-600 text-white shadow-sm'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'bg-fuchsia-600 text-white shadow-sm'
+                    : 'text-zinc-400 hover:text-fuchsia-300'
                 }`}
               >
                 Técnico
@@ -261,7 +261,7 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
           <button
             type="submit"
             disabled={isLoading || (activeTab === 'file' ? !selectedFile : !pastedText.trim())}
-            className="w-full sm:w-auto flex items-center justify-center space-x-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs rounded-xl shadow-lg shadow-indigo-500/20 transition-all disabled:opacity-40 cursor-pointer"
+            className="w-full sm:w-auto flex items-center justify-center space-x-2 px-6 py-3 bg-fuchsia-600 hover:bg-fuchsia-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-fuchsia-900/50 transition-all disabled:opacity-40 cursor-pointer"
           >
             {isLoading ? (
               <>

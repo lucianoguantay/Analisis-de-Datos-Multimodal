@@ -1,13 +1,5 @@
 import React from 'react';
-import { Sparkles, FileText, BarChart3, RotateCcw, Presentation, UserCheck, Cpu } from 'lucide-react';
-import { AudienceMode } from '../types';
-
-interface NavbarProps {
-  audienceMode: AudienceMode;
-  onAudienceModeChange: (mode: AudienceMode) => void;
-  onReset: () => void;
-  hasAnalysis: boolean;
-}
+import { Sparkles, RotateCcw, Presentation, UserCheck, Cpu } from 'lucide-react';
 
 export const Navbar: React.FC<NavbarProps> = ({
   audienceMode,
@@ -16,37 +8,37 @@ export const Navbar: React.FC<NavbarProps> = ({
   hasAnalysis,
 }) => {
   return (
-    <header className="sticky top-0 z-40 bg-slate-900 text-white border-b border-slate-800 shadow-sm">
+    <header className="sticky top-0 z-40 bg-black text-white border-b border-purple-900 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        
         {/* Brand with Geometric Balance Logo */}
         <div className="flex items-center space-x-3.5 cursor-pointer" onClick={onReset}>
-          <div className="w-8 h-8 bg-indigo-500 rounded-sm rotate-45 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+          {/* Ícono rediseñado con fondo morado y sombra fucsia */}
+          <div className="w-8 h-8 bg-purple-600 rounded-sm rotate-45 flex items-center justify-center shadow-lg shadow-fuchsia-500/30">
             <Sparkles className="w-4 h-4 text-white -rotate-45" />
           </div>
           <div>
             <div className="flex items-center space-x-2">
               <span className="font-bold text-lg tracking-tight text-white">
-                DataLens <span className="text-indigo-400">AI</span>
-              </span>
-              <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-                Geometric Balance
+                Data Pulperia <span className="text-pink-400"> IA</span>
               </span>
             </div>
-            <p className="text-[11px] text-slate-400 font-medium">Análisis Multimodal de Datos, Facturas e Investigación</p>
+            <p className="text-[11px] text-zinc-400 font-medium">Análisis Multimodal de Datos, Facturas e Investigación</p>
           </div>
         </div>
 
         {/* Controls */}
         <div className="flex items-center space-x-3">
-          {/* Audience Mode Switcher */}
-          <div className="hidden md:flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs">
+          
+          {/* Audience Mode Switcher - Contenedor súper oscuro con bordes morados */}
+          <div className="hidden md:flex items-center bg-zinc-950 p-1 rounded-xl border border-purple-900 text-xs">
             <button
               id="mode-executive-btn"
               onClick={() => onAudienceModeChange('executive')}
               className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all ${
                 audienceMode === 'executive'
-                  ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/20'
-                  : 'text-slate-400 hover:text-slate-200'
+                  ? 'bg-fuchsia-600 text-white shadow-md shadow-fuchsia-500/20'
+                  : 'text-zinc-400 hover:text-pink-200'
               }`}
               title="Para Presentaciones y Reportes a Ejecutivos"
             >
@@ -58,8 +50,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => onAudienceModeChange('general_public')}
               className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all ${
                 audienceMode === 'general_public'
-                  ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/20'
-                  : 'text-slate-400 hover:text-slate-200'
+                  ? 'bg-fuchsia-600 text-white shadow-md shadow-fuchsia-500/20'
+                  : 'text-zinc-400 hover:text-pink-200'
               }`}
               title="Explicación Sencilla para Todo Público"
             >
@@ -71,8 +63,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => onAudienceModeChange('technical')}
               className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all ${
                 audienceMode === 'technical'
-                  ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/20'
-                  : 'text-slate-400 hover:text-slate-200'
+                  ? 'bg-fuchsia-600 text-white shadow-md shadow-fuchsia-500/20'
+                  : 'text-zinc-400 hover:text-pink-200'
               }`}
               title="Detalle Técnico e Investigación"
             >
@@ -85,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               id="new-analysis-btn"
               onClick={onReset}
-              className="flex items-center space-x-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold px-3.5 py-2 rounded-xl border border-slate-700 transition-colors"
+              className="flex items-center space-x-1.5 bg-zinc-900 hover:bg-purple-900 text-zinc-200 text-xs font-semibold px-3.5 py-2 rounded-xl border border-purple-800 transition-colors"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">Nuevo Análisis</span>

@@ -8,7 +8,7 @@ import { DiagramGenerator } from './components/DiagramGenerator';
 import { DataChat } from './components/DataChat';
 import { CameraModal } from './components/CameraModal';
 import { AnalysisResult, AudienceMode } from './types';
-import { Sparkles, Printer, Copy, Check, FileCheck2, AlertCircle, ArrowLeft } from 'lucide-react';
+import { Sparkles, Printer, Copy, Check, AlertCircle, ArrowLeft, Github, Instagram } from 'lucide-react';
 
 export default function App() {
   const [audienceMode, setAudienceMode] = useState<AudienceMode>('executive');
@@ -99,7 +99,7 @@ ${(analysisResult.recommendations || []).map((r, i) => `${i + 1}. ${r}`).join('\
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-indigo-500 selection:text-white flex flex-col">
+    <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans selection:bg-fuchsia-500 selection:text-white flex flex-col">
       <Navbar
         audienceMode={audienceMode}
         onAudienceModeChange={setAudienceMode}
@@ -113,16 +113,16 @@ ${(analysisResult.recommendations || []).map((r, i) => `${i + 1}. ${r}`).join('\
           <div className="max-w-4xl mx-auto space-y-8">
             {/* Hero Banner */}
             <div className="text-center space-y-3 pt-2">
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold">
-                <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
-                <span>Analizador Multimodal • Gemini AI Studio</span>
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-purple-900/40 border-purple-700/50 text-pink-400">
+                <Sparkles className="w-3.5 h-3.5 text-fuchsia-500" />
+                <span>Analizador Multimodal • Gemini AI</span>
               </div>
-              <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-                Transforma facturas, informes y datos en un{' '}
-                <span className="text-indigo-600">Análisis Claro y Ejecutivo</span>
+              <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-zinc-100">
+                Convierte facturas, informes y datos en un{' '}
+                <span className="text-fuchsia-500">Análisis Claro y Detallado</span>
               </h1>
-              <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
-                Diseñado para estudiantes de informática, docentes y líderes ejecutivos.
+              <p className="text-xs sm:text-sm text-zinc-400 max-w-2xl mx-auto leading-relaxed font-normal">
+                Diseñado para estudiantes, docentes y líderes ejecutivos.
                 Carga fotos de facturas, investigaciones académicas o reportes en texto para generar paneles con gráficos interactivos e indicadores estadísticos.
               </p>
             </div>
@@ -219,18 +219,55 @@ ${(analysisResult.recommendations || []).map((r, i) => `${i + 1}. ${r}`).join('\
         )}
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500 mt-auto">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>
-            DataLens AI • Theme Geometric Balance • Powered by Google AI Studio
-          </p>
-          <p className="text-slate-500 font-mono text-[11px]">
-            Ingeniería en Informática • Gemini 3.6 Flash
-          </p>
+      {/* Footer Temático Neón con Firma Personal */}
+      <footer className="border-t border-fuchsia-800/50 bg-zinc-950 py-8 text-center mt-auto relative overflow-hidden">
+        {/* Resplandor superior sutil */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-pink-400/50 to-transparent"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-5 relative z-10">
+          
+          {/* Bloque de Autoría - Tu Identidad */}
+          <div className="flex flex-col items-center space-y-3">
+            <p className="text-zinc-300 text-sm font-medium tracking-wide">
+              Desarrollado por: <span className="text-pink-400 font-bold">LUCIANO EMILIO GUANTAY</span>
+            </p>
+            
+            {/* Redes Sociales / Contacto */}
+            <div className="flex items-center space-x-5">
+              <a 
+                href="https://github.com/lucianoguantay" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-zinc-500 hover:text-white transition-colors duration-300 transform hover:scale-110"
+                title="Perfil de GitHub"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.instagram.com/lucianoguantay08/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-zinc-500 hover:text-fuchsia-500 transition-colors duration-300 transform hover:scale-110"
+                title="Perfil de Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Información Técnica del Proyecto */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full border-t border-purple-900/40 pt-4">
+            <p className="text-purple-200/80 text-[11px] font-medium">
+              Data Pulperia <span className="text-pink-300 font-bold">IA</span> • Theme Dark Neon
+            </p>
+            <span className="hidden sm:inline text-zinc-700">•</span>
+            <p className="font-mono text-[10px] text-fuchsia-400/60 hover:text-pink-300 transition-colors cursor-default tracking-wider">
+              Ingeniería en Informática • Gemini 3.6 Flash
+            </p>
+          </div>
+          
         </div>
       </footer>
-
       {/* Live Camera Modal */}
       <CameraModal
         isOpen={isCameraOpen}
